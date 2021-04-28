@@ -53,13 +53,13 @@ class Game : public graphics::AnimationEventListener,
   void Start();
 
  private:
-  std::unique_ptr<PlayerProjectile> p_projects;
-  std::unique_ptr<OpponentProjectile> o_projects;
-  std::unique_ptr<Opponent> opp;
+  std::unique_ptr<PlayerProjectile> p_projectile;
+  std::unique_ptr<OpponentProjectile> o_projectile;
+  std::unique_ptr<Opponent> opponent;
 
-  std::vector<p_projects> p_projectiles;
-  std::vector<o_projects> o_projectiles;
-  std::vector<opp> opponents;
+  std::vector<p_projectile> p_projectiles;
+  std::vector<o_projectile> o_projectiles;
+  std::vector<opponent> opponents;
   graphics::Image game_screen;
   Player* player;
 };
