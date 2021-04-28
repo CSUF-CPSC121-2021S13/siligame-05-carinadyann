@@ -20,6 +20,7 @@ std::vector<PlayerProjectile*> &Game::GetPlayerProjectiles() {
 }
 
 void Game::CreateOpponents() {
+  std::unique_ptr<Opponent> opponent;
   // Opponent* opponent;
   int x = rand() % (game_screen.GetWidth() - opponent->GetWidth());
   int y = rand() % (game_screen.GetHeight() - opponent->GetHeight());
@@ -29,6 +30,7 @@ void Game::CreateOpponents() {
 }
 
 void Game::CreateOpponentProjectiles() {
+  std::unique_ptr<OpponentProjectile> o_projectile;
   // OpponentProjectile* o_projectile;
   int x = rand() % (game_screen.GetWidth() - o_projectile->GetWidth());
   int y = rand() % (game_screen.GetHeight() - o_projectile->GetHeight());
@@ -38,6 +40,7 @@ void Game::CreateOpponentProjectiles() {
 }
 
 void Game::CreatePlayerProjectiles() {
+  std::unique_ptr<PlayerProjectile> p_projectile;
   // PlayerProjectile* p_projectile;
   int x = rand() % (game_screen.GetWidth() - p_projectile->GetWidth());
   int y = rand() % (game_screen.GetHeight() - p_projectile->GetHeight());
