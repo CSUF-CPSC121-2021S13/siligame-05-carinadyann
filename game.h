@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <memory>
 #include "cpputils/graphics/image.h"
 #include "cpputils/graphics/image_event.h"
 #include "opponent.h"
@@ -52,9 +53,13 @@ class Game : public graphics::AnimationEventListener,
   void Start();
 
  private:
-  std::vector<PlayerProjectile*> p_projectiles;
-  std::vector<OpponentProjectile*> o_projectiles;
-  std::vector<Opponent*> opponents;
+  std::unique_ptr<PlayerProjectile> p_projects;
+  std::unique_ptr<OpponentProjectile> o_projects;
+  std::unique_ptr<Opponent> opp;
+
+  std::vector<p_projects> p_projectiles;
+  std::vector<o_projects> o_projectiles;
+  std::vector<opp> opponents;
   graphics::Image game_screen;
   Player* player;
 };
