@@ -85,3 +85,5 @@ void OpponentProjectile::Move(const graphics::Image &foreground) {
     y_ += 1;
   }
 }
+
+std::unique_ptr<OpponentProjectile> LaunchProjectile() {}

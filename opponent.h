@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include "cpputils/graphics/image.h"
 #include "game_element.h"
 #ifndef OPPONENT_H
@@ -21,3 +22,5 @@ class OpponentProjectile : public GameElement {
   void Move(const graphics::Image &foreground) override;
 };
 #endif
+
+std::unique_ptr<OpponentProjectile> LaunchProjectile();

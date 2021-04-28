@@ -19,29 +19,29 @@ std::vector<PlayerProjectile*> &Game::GetPlayerProjectiles() {
 }
 
 void Game::CreateOpponents() {
-  Opponent opponent;
-  int x = rand() % (game_screen.GetWidth() - opponent.GetWidth());
-  int y = rand() % (game_screen.GetHeight() - opponent.GetHeight());
-  opponent.SetX(x);
-  opponent.SetY(y);
+  Opponent* opponent;
+  int x = rand() % (game_screen.GetWidth() - opponent->GetWidth());
+  int y = rand() % (game_screen.GetHeight() - opponent->GetHeight());
+  opponent->SetX(x);
+  opponent->SetY(y);
   opponents.push_back(opponent);
 }
 
 void Game::CreateOpponentProjectiles() {
-  OpponentProjectile o_projectile;
-  int x = rand() % (game_screen.GetWidth() - o_projectile.GetWidth());
-  int y = rand() % (game_screen.GetHeight() - o_projectile.GetHeight());
-  o_projectile.SetX(x);
-  o_projectile.SetY(y);
+  OpponentProjectile* o_projectile;
+  int x = rand() % (game_screen.GetWidth() - o_projectile->GetWidth());
+  int y = rand() % (game_screen.GetHeight() - o_projectile->GetHeight());
+  o_projectile->SetX(x);
+  o_projectile->SetY(y);
   o_projectiles.push_back(o_projectile);
 }
 
 void Game::CreatePlayerProjectiles() {
-  PlayerProjectile p_projectile;
-  int x = rand() % (game_screen.GetWidth() - p_projectile.GetWidth());
-  int y = rand() % (game_screen.GetHeight() - p_projectile.GetHeight());
-  p_projectile.SetX(x);
-  p_projectile.SetY(y);
+  PlayerProjectile* p_projectile;
+  int x = rand() % (game_screen.GetWidth() - p_projectile->GetWidth());
+  int y = rand() % (game_screen.GetHeight() - p_projectile->GetHeight());
+  p_projectile->SetX(x);
+  p_projectile->SetY(y);
   p_projectiles.push_back(p_projectile);
 }
 
