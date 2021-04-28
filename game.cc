@@ -1,4 +1,5 @@
 #include "game.h"
+#include "game.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -131,6 +132,7 @@ void Game::FilterIntersections() {
 // listener) {}
 
 void Game::OnAnimationStep() {
+  game_screen.DrawRectangle(0, 0, game_screen.GetWidth(), game_screen.GetHeight(), graphics::Color(255, 255, 255));
   MoveGameElements();
   FilterIntersections();
   UpdateScreen();
