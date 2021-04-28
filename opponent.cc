@@ -86,4 +86,12 @@ void OpponentProjectile::Move(const graphics::Image &foreground) {
   }
 }
 
-std::unique_ptr<OpponentProjectile> LaunchProjectile() {}
+std::unique_ptr<OpponentProjectile> LaunchProjectile() {
+  std::unique_ptr<OpponentProjectile> o_project;
+  if (o_project->GetX() >= 0 && o_project->GetY()) {
+    o_project->SetX(10);
+    o_project->SetY(10);
+    return o_project;
+  }
+  return nullptr;
+}
