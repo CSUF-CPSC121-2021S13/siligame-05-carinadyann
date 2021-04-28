@@ -6,15 +6,15 @@
 #include "cpputils/graphics/image.h"
 #include "player.h"
 
-Player &Game::GetPlayer() { return player; }
+Player* Game::GetPlayer() { return player; }
 
-std::vector<Opponent> &Game::GetOpponents() { return opponents; }
+std::vector<Opponent*> &Game::GetOpponents() { return opponents; }
 
-std::vector<OpponentProjectile> &Game::GetOpponentProjectiles() {
+std::vector<OpponentProjectile*> &Game::GetOpponentProjectiles() {
   return o_projectiles;
 }
 
-std::vector<PlayerProjectile> &Game::GetPlayerProjectiles() {
+std::vector<PlayerProjectile*> &Game::GetPlayerProjectiles() {
   return p_projectiles;
 }
 
@@ -57,25 +57,25 @@ void Game::Init() {
 void Game::UpdateScreen() {
   // game_screen.DrawRectangle(0, 0, 800, 600, graphics::Color(255, 255, 255));
   for (int i = 0; i < opponents.size(); i++) {
-    if (opponents[i].GetIsActive() == true) {
-      opponents[i].Draw(game_screen);
+    if (opponents[i]->GetIsActive() == true) {
+      opponents[i]->Draw(game_screen);
     }
   }
 
   for (int j = 0; j < o_projectiles.size(); j++) {
-    if (o_projectiles[j].GetIsActive() == true) {
-      o_projectiles[j].Draw(game_screen);
+    if (o_projectiles[j]->GetIsActive() == true) {
+      o_projectiles[j]->Draw(game_screen);
     }
   }
 
   for (int k = 0; k < p_projectiles.size(); k++) {
-    if (p_projectiles[k].GetIsActive() == true) {
-      p_projectiles[k].Draw(game_screen);
+    if (p_projectiles[k]->GetIsActive() == true) {
+      p_projectiles[k]->Draw(game_screen);
     }
   }
 
-  if (player.GetIsActive() == true) {
-    player.Draw(game_screen);
+  if (player->GetIsActive() == true) {
+    player->Draw(game_screen);
   }
 }
 
@@ -83,45 +83,45 @@ graphics::Image &Game::GetGameScreen() { return game_screen; }
 
 void Game::MoveGameElements() {
   for (int i = 0; i < opponents.size(); i++) {
-    if (opponents[i].GetIsActive() == true) {
-      opponents[i].Move(game_screen);
+    if (opponents[i]->GetIsActive() == true) {
+      opponents[i]->Move(game_screen);
     }
   }
 
   for (int i = 0; i < o_projectiles.size(); i++) {
-    if (o_projectiles[i].GetIsActive() == true) {
-      o_projectiles[i].Move(game_screen);
+    if (o_projectiles[i]->GetIsActive() == true) {
+      o_projectiles[i]->Move(game_screen);
     }
   }
 
   for (int i = 0; i < p_projectiles.size(); i++) {
-    if (p_projectiles[i].GetIsActive() == true) {
-      p_projectiles[i].Move(game_screen);
+    if (p_projectiles[i]->GetIsActive() == true) {
+      p_projectiles[i]->Move(game_screen);
     }
   }
 }
 
 void Game::FilterIntersections() {
   for (int i = 0; i < opponents.size(); i++) {
-    if (opponents[i].IntersectsWith(player)) {
-      opponents[i].SetIsActive(false);
-      player.SetIsActive(false);
+    if (opponents[i]->IntersectsWith(player)) {
+      opponents[i]->SetIsActive(false);
+      player->SetIsActive(false);
     }
   }
 
   for (int i = 0; i < p_projectiles.size(); i++) {
     for (int j = 0; j < opponents.size(); j++) {
-      if (p_projectiles[i].IntersectsWith(opponents[j])) {
-        p_projectiles[i].SetIsActive(false);
-        opponents[j].SetIsActive(false);
+      if (p_projectiles[i]->IntersectsWith(opponents[j])) {
+        p_projectiles[i]->SetIsActive(false);
+        opponents[j]->SetIsActive(false);
       }
     }
   }
 
   for (int i = 0; i < o_projectiles.size(); i++) {
-    if (o_projectiles[i].IntersectsWith(player)) {
-      o_projectiles[i].SetIsActive(false);
-      player.SetIsActive(false);
+    if (o_projectiles[i]->IntersectsWith(player)) {
+      o_projectiles[i]->SetIsActive(false);
+      player->SetIsActive(false);
     }
   }
 }
@@ -142,8 +142,8 @@ void Game::OnAnimationStep() {
 void Game::OnMouseEvent(const graphics::MouseEvent &event) {
   if (event.GetX() <= game_screen.GetWidth() && event.GetX() >= 0 &&
       event.GetY() <= game_screen.GetHeight() && event.GetY() >= 0) {
-    player.SetX(event.GetX() - (player.GetWidth() / 2));
-    player.SetY(event.GetY() - (player.GetHeight() / 2));
+    player->SetX(event.GetX() - (player->GetWidth() / 2));
+    player->SetY(event.GetY() - (player->GetHeight() / 2));
   }
 }
 

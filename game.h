@@ -14,16 +14,16 @@ class Game : public graphics::AnimationEventListener,
   Game() : Game(800, 600) {}
   Game(int width, int height) {
     game_screen.Initialize(width, height);
-    player.SetX(10);
-    player.SetY(10);
+    player->SetX(10);
+    player->SetY(10);
   }
-  Player &GetPlayer();
+  Player* GetPlayer();
 
-  std::vector<Opponent> &GetOpponents();
+  std::vector<Opponent*> &GetOpponents();
 
-  std::vector<OpponentProjectile> &GetOpponentProjectiles();
+  std::vector<OpponentProjectile*> &GetOpponentProjectiles();
 
-  std::vector<PlayerProjectile> &GetPlayerProjectiles();
+  std::vector<PlayerProjectile*> &GetPlayerProjectiles();
 
   void CreateOpponents();
 
@@ -52,11 +52,11 @@ class Game : public graphics::AnimationEventListener,
   void Start();
 
  private:
-  std::vector<PlayerProjectile> p_projectiles;
-  std::vector<OpponentProjectile> o_projectiles;
-  std::vector<Opponent> opponents;
+  std::vector<PlayerProjectile*> p_projectiles;
+  std::vector<OpponentProjectile*> o_projectiles;
+  std::vector<Opponent*> opponents;
   graphics::Image game_screen;
-  Player player;
+  Player* player;
 };
 
 #endif

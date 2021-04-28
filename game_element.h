@@ -36,7 +36,7 @@ class GameElement {
 
   virtual void Move(const graphics::Image &foreground) = 0;
 
-  bool IntersectsWith(GameElement &game);
+  bool IntersectsWith(GameElement* game);
 
   bool IsOutOfBounds(const graphics::Image &image);
 
