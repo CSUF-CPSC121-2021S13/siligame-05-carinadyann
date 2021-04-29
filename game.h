@@ -20,11 +20,11 @@ class Game : public graphics::AnimationEventListener,
   }
   Player* GetPlayer();
 
-  std::vector<Opponent*> &GetOpponents();
+  std::vector<std::unique_ptr<Opponent>> &GetOpponents();
 
-  std::vector<OpponentProjectile*> &GetOpponentProjectiles();
+  std::vector<std::unique_ptr<OpponentProjectile>> &GetOpponentProjectiles();
 
-  std::vector<PlayerProjectile*> &GetPlayerProjectiles();
+  std::vector<std::unique_ptr<PlayerProjectile>> &GetPlayerProjectiles();
 
   void CreateOpponents();
 
@@ -53,9 +53,9 @@ class Game : public graphics::AnimationEventListener,
   void Start();
 
  private:
-  std::vector<PlayerProjectile*> p_projectiles;
-  std::vector<OpponentProjectile*> o_projectiles;
-  std::vector<Opponent*> opponents;
+  std::vector<std::unique_ptr<PlayerProjectile>> p_projectiles;
+  std::vector<std::unique_ptr<OpponentProjectile>> o_projectiles;
+  std::vector<std::unique_ptr<Opponent>> opponents;
   graphics::Image game_screen;
   Player* player;
 };
