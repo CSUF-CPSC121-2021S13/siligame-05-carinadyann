@@ -107,24 +107,24 @@ void Game::MoveGameElements() {
 
 void Game::FilterIntersections() {
   for (int i = 0; i < opponents.size(); i++) {
-    if (opponents[i]->IntersectsWith(player)) {
-      opponents[i]->SetIsActive(false);
+    if (opponents.at(i)->IntersectsWith(player)) {
+      opponents.at(i)->SetIsActive(false);
       player->SetIsActive(false);
     }
   }
 
   for (int i = 0; i < p_projectiles.size(); i++) {
     for (int j = 0; j < opponents.size(); j++) {
-      if (p_projectiles[i]->IntersectsWith(opponents[j])) {
-        p_projectiles[i]->SetIsActive(false);
-        opponents[j]->SetIsActive(false);
+      if (p_projectiles.at(i)->IntersectsWith(opponents.at(j))) {
+        p_projectiles.at(i)->SetIsActive(false);
+        opponents.at(j)->SetIsActive(false);
       }
     }
   }
 
   for (int i = 0; i < o_projectiles.size(); i++) {
-    if (o_projectiles[i]->IntersectsWith(player)) {
-      o_projectiles[i]->SetIsActive(false);
+    if (o_projectiles.at(i)->IntersectsWith(player)) {
+      o_projectiles.at(i)->SetIsActive(false);
       player->SetIsActive(false);
     }
   }
