@@ -58,7 +58,7 @@ void Game::Init() {
 }
 
 void Game::UpdateScreen() {
-  // game_screen.DrawRectangle(0, 0, 800, 600, graphics::Color(255, 255, 255));
+  game_screen.DrawRectangle(0, 0, 800, 600, graphics::Color(255, 255, 255));
   for (int i = 0; i < opponents.size(); i++) {
     if (opponents[i]->GetIsActive() == true) {
       opponents[i]->Draw(game_screen);
@@ -79,6 +79,8 @@ void Game::UpdateScreen() {
 
   if (player->GetIsActive() == true) {
     player->Draw(game_screen);
+  } else {
+    game_screen.DrawText(400, 300, "Game Over", 20, graphics::Color(255, 0, 0));
   }
 }
 
