@@ -71,12 +71,18 @@ void Game::UpdateScreen() {
   for (int j = 0; j < o_projectiles.size(); j++) {
     if (o_projectiles[j]->GetIsActive() == true) {
       o_projectiles[j]->Draw(game_screen);
+      std::string s_score = std::to_string(score);
+      scoreboard = "Score: " + s_score;
+      game_screen.DrawText(400, 300, scoreboard, 20, graphics::Color(255, 0, 0));
     }
   }
 
   for (int k = 0; k < p_projectiles.size(); k++) {
     if (p_projectiles[k]->GetIsActive() == true) {
       p_projectiles[k]->Draw(game_screen);
+      std::string s_score = std::to_string(score);
+      scoreboard = "Score: " + s_score;
+      game_screen.DrawText(400, 300, scoreboard, 20, graphics::Color(255, 0, 0));
     }
   }
 
@@ -122,6 +128,7 @@ void Game::FilterIntersections() {
       if (p_projectiles.at(i)->IntersectsWith(opponents[i].get())) {
         p_projectiles.at(i)->SetIsActive(false);
         opponents.at(j)->SetIsActive(false);
+        score++;
       }
     }
   }
