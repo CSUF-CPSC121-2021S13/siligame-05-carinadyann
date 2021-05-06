@@ -1,5 +1,4 @@
 #include "game.h"
-#include "game.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -51,9 +50,9 @@ void Game::CreatePlayerProjectiles() {
 
 void Game::Init() {
   Player player;
-  CreateOpponents();
-  CreateOpponentProjectiles();
-  CreatePlayerProjectiles();
+  // CreateOpponents();
+  // CreateOpponentProjectiles();
+  // CreatePlayerProjectiles();
   game_screen.AddMouseEventListener(*this);
   game_screen.AddAnimationEventListener(*this);
 }
@@ -152,3 +151,8 @@ void Game::OnMouseEvent(const graphics::MouseEvent &event) {
 }
 
 void Game::Start() { game_screen.ShowUntilClosed(); }
+
+void Game::LaunchProjectiles() {
+  Opponent opponent_;
+  opponent_.LaunchProjectile();
+}
