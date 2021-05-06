@@ -62,6 +62,9 @@ void Game::UpdateScreen() {
   for (int i = 0; i < opponents.size(); i++) {
     if (opponents[i]->GetIsActive() == true) {
       opponents[i]->Draw(game_screen);
+      std::string s_score = std::to_string(score);
+      scoreboard = "Score: " + s_score;
+      game_screen.DrawText(400, 300, scoreboard, 20, graphics::Color(255, 0, 0));
     }
   }
 

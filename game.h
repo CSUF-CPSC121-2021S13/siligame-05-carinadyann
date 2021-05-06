@@ -55,6 +55,8 @@ class Game : public graphics::AnimationEventListener,
   void LaunchProjectiles();
 
  private:
+  std::string scoreboard = "";
+  int score = 0;
   std::vector<std::unique_ptr<PlayerProjectile>> p_projectiles;
   std::vector<std::unique_ptr<OpponentProjectile>> o_projectiles;
   std::vector<std::unique_ptr<Opponent>> opponents;
