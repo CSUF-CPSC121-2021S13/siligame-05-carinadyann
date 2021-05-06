@@ -114,7 +114,7 @@ void Game::FilterIntersections() {
 
   for (int i = 0; i < p_projectiles.size(); i++) {
     for (int j = 0; j < opponents.size(); j++) {
-      if (p_projectiles.at(i)->IntersectsWith(opponents.at(j))) {
+      if (p_projectiles.at(i)->IntersectsWith(opponents[i].get())) {
         p_projectiles.at(i)->SetIsActive(false);
         opponents.at(j)->SetIsActive(false);
       }
