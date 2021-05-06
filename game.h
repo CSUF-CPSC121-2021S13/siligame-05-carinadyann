@@ -54,6 +54,7 @@ class Game : public graphics::AnimationEventListener,
 
   void LaunchProjectiles();
 
+  void RemoveInactive();
  private:
   std::string scoreboard = "";
   int score = 0;

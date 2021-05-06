@@ -168,3 +168,23 @@ void Game::LaunchProjectiles() {
   Opponent opponent_;
   opponent_.LaunchProjectile();
 }
+
+void Game::RemoveInactive() {
+  for (int i = 0; i < opponents.size(); i++) {
+    if (!opponents[i]->GetIsActive()) {
+      opponents.erase(opponents.begin() + i);
+    }
+  }
+
+  for (int i = 0; i < o_projectiles.size(); i++) {
+    if (!o_projectiles[i]->GetIsActive()) {
+      o_projectiles.erase(o_projectiles.begin() + i);
+    }
+  }
+
+  for (int i = 0; i < p_projectiles.size(); i++) {
+    if (!p_projectiles[i]->GetIsActive()) {
+      p_projectiles.erase(p_projectiles.begin() + i);
+    }
+  }
+}
