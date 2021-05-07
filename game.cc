@@ -6,7 +6,16 @@
 #include "cpputils/graphics/image.h"
 #include "player.h"
 
-Player* Game::GetPlayer() { return player; }
+int Game::GetScore() const { return score; }
+
+bool Game::HasLost() {
+  if (player->GetIsActive()) {
+    return true;
+  }
+  return false;
+}
+
+Player& Game::GetPlayer() { return *player; }
 
 std::vector<std::unique_ptr<Opponent>> &Game::GetOpponents() { return opponents; }
 
@@ -149,7 +158,9 @@ void Game::FilterIntersections() {
 void Game::OnAnimationStep() {
   game_screen.DrawRectangle(0, 0, game_screen.GetWidth(), game_screen.GetHeight(), graphics::Color(255, 255, 255));
   MoveGameElements();
+  LaunchProjectiles();
   FilterIntersections();
+  RemoveInactive();
   UpdateScreen();
   game_screen.Flush();
 }

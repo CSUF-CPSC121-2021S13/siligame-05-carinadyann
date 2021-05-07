@@ -18,7 +18,11 @@ class Game : public graphics::AnimationEventListener,
     player->SetX(10);
     player->SetY(10);
   }
-  Player* GetPlayer();
+  int GetScore() const;
+
+  bool HasLost();
+
+  Player& GetPlayer();
 
   std::vector<std::unique_ptr<Opponent>> &GetOpponents();
 
