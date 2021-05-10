@@ -180,7 +180,7 @@ void Game::LaunchProjectiles() {
   for (int i = 0; i < opponents.size(); i++) {
     std::unique_ptr<OpponentProjectile> result = opponents[i]->LaunchProjectile();
     if (result != nullptr) {
-      opponents.push_back(std::move(result));
+      o_projectiles.push_back(std::move(result));
     }
   }
 }
