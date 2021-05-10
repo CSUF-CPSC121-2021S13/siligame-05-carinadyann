@@ -179,9 +179,8 @@ void Game::Start() { game_screen.ShowUntilClosed(); }
 void Game::LaunchProjectiles() {
   for (int i = 0; i < opponents.size(); i++) {
     opponents[i]->LaunchProjectile();
-    std::unique_ptr<OpponentProjectile> result = LaunchProjectile();
-    if (result != nullptr) {
-      opponents.push_back(result);
+    if (opponents[i]->LaunchProjectile() != nullptr) {
+      opponents.push_back(opponents[i]->LaunchProjectile());
     }
   }
 }
