@@ -21,6 +21,8 @@ class Opponent : public GameElement {
   void Draw(graphics::Image &image3) override;
   void Move(const graphics::Image &foreground) override;
   std::unique_ptr<OpponentProjectile> LaunchProjectile();
+ private:
+  int count = 0;
 };
 
 #endif
