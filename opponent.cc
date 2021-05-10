@@ -88,13 +88,11 @@ void OpponentProjectile::Move(const graphics::Image &foreground) {
 
 std::unique_ptr<OpponentProjectile> Opponent::LaunchProjectile() {
   std::unique_ptr<OpponentProjectile> o_project = std::make_unique<OpponentProjectile>();
-  if (o_project->GetX() >= 0 && o_project->GetY() >= 0 && count % 10 == 0) {
-    o_project->SetX(GetWidth() / 2);
-    o_project->SetY(GetHeight() / 2);
+  if (o_project->GetX() >= 0 && o_project->GetY() >= 0 && count == 20) {
     count = 0;
     return o_project;
   } else {
+    count++;
     return nullptr;
   }
-  count++;
 }
