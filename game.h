@@ -12,12 +12,12 @@
 class Game : public graphics::AnimationEventListener,
              graphics::MouseEventListener {
  public:
-  Game() : Game(800, 600) {}
-  Game(int width, int height) {
-    game_screen.Initialize(width, height);
-    player->SetX(10);
-    player->SetY(10);
-  }
+  Game() : game_screen(800, 600) {}
+  Game(int width, int height) : game_screen(width, height) {
+    // game_screen.Initialize(width, height);
+    // player->SetX(10);
+    // player->SetY(10);
+    }
   int GetScore() const;
 
   bool HasLost();

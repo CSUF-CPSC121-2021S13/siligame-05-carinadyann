@@ -1,4 +1,5 @@
 #include "game.h"
+#include "opponent.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -176,8 +177,13 @@ void Game::OnMouseEvent(const graphics::MouseEvent &event) {
 void Game::Start() { game_screen.ShowUntilClosed(); }
 
 void Game::LaunchProjectiles() {
-  Opponent opponent_;
-  opponent_.LaunchProjectile();
+  for (int i = 0; i < opponents.size(); i++) {
+    opponents[i]->LaunchProjectile();
+    std::unique_ptr<OpponentProjectile> result = LaunchProjectile();
+    if (result != nullptr) {
+      opponents.push_back(result);
+    }
+  }
 }
 
 void Game::RemoveInactive() {
