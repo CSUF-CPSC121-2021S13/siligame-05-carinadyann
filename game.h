@@ -65,6 +65,10 @@ class Game : public graphics::AnimationEventListener,
   std::vector<std::unique_ptr<PlayerProjectile>> p_projectiles;
   std::vector<std::unique_ptr<OpponentProjectile>> o_projectiles;
   std::vector<std::unique_ptr<Opponent>> opponents;
+  
+  std::unique_ptr<PlayerProjectile> p_projectile = std::make_unique<PlayerProjectile>();
+  std::unique_ptr<OpponentProjectile> o_projectile = std::make_unique<OpponentProjectile>();
+  std::unique_ptr<Opponent> opponent = std::make_unique<Opponent>();
   graphics::Image game_screen;
   Player* player;
 };
