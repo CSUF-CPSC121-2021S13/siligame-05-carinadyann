@@ -54,7 +54,7 @@ void Game::CreatePlayerProjectiles() {
 }
 
 void Game::Init() {
-  Player player;
+  Player(10, 10);
   // CreateOpponents();
   // CreateOpponentProjectiles();
   // CreatePlayerProjectiles();
@@ -168,6 +168,10 @@ void Game::OnMouseEvent(const graphics::MouseEvent &event) {
       event.GetY() <= game_screen.GetHeight() && event.GetY() >= 0) {
     player.SetX(event.GetX() - (player.GetWidth() / 2));
     player.SetY(event.GetY() - (player.GetHeight() / 2));
+    if (event.GetMouseAction() == graphics::MouseAction::kPressed || event.GetMouseAction() == graphics::MouseAction::kDragged) {
+      std::unique_ptr<PlayerProjectile> play_pro = std::make_unique<PlayerProjectile>();
+      p_projectiles.push_back(std::move(play_pro));
+    }
   }
 }
 
