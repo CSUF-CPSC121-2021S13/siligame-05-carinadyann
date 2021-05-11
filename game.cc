@@ -9,14 +9,9 @@
 
 int Game::GetScore() const { return score; }
 
-bool Game::HasLost() {
-  if (player->GetIsActive()) {
-    return true;
-  }
-  return false;
-}
+bool Game::HasLost() const { return has_lost; }
 
-Player& Game::GetPlayer() { return *player; }
+Player& Game::GetPlayer() { return player; }
 
 std::vector<std::unique_ptr<Opponent>> &Game::GetOpponents() { return opponents; }
 
@@ -96,8 +91,8 @@ void Game::UpdateScreen() {
     }
   }
 
-  if (player->GetIsActive() == true) {
-    player->Draw(game_screen);
+  if (player.GetIsActive() == true) {
+    player.Draw(game_screen);
   } else {
     game_screen.DrawText(400, 300, "Game Over", 20, graphics::Color(255, 0, 0));
   }
@@ -127,26 +122,28 @@ void Game::MoveGameElements() {
 
 void Game::FilterIntersections() {
   for (int i = 0; i < opponents.size(); i++) {
-    if (opponents.at(i)->IntersectsWith(player)) {
-      opponents.at(i)->SetIsActive(false);
-      player->SetIsActive(false);
+    if (opponents[i]->IntersectsWith(&player)) {
+      opponents[i]->SetIsActive(false);
+      player.SetIsActive(false);
+      has_lost = true;
     }
   }
 
   for (int i = 0; i < p_projectiles.size(); i++) {
     for (int j = 0; j < opponents.size(); j++) {
-      if (p_projectiles.at(i)->IntersectsWith(opponents[i].get())) {
-        p_projectiles.at(i)->SetIsActive(false);
-        opponents.at(j)->SetIsActive(false);
+      if (p_projectiles[i]->IntersectsWith(opponents[i].get())) {
+        p_projectiles[i]->SetIsActive(false);
+        opponents[j]->SetIsActive(false);
         score++;
       }
     }
   }
 
   for (int i = 0; i < o_projectiles.size(); i++) {
-    if (o_projectiles.at(i)->IntersectsWith(player)) {
-      o_projectiles.at(i)->SetIsActive(false);
-      player->SetIsActive(false);
+    if (o_projectiles[i]->IntersectsWith(&player)) {
+      o_projectiles[i]->SetIsActive(false);
+      player.SetIsActive(false);
+      has_lost = true;
     }
   }
 }
@@ -169,8 +166,8 @@ void Game::OnAnimationStep() {
 void Game::OnMouseEvent(const graphics::MouseEvent &event) {
   if (event.GetX() <= game_screen.GetWidth() && event.GetX() >= 0 &&
       event.GetY() <= game_screen.GetHeight() && event.GetY() >= 0) {
-    player->SetX(event.GetX() - (player->GetWidth() / 2));
-    player->SetY(event.GetY() - (player->GetHeight() / 2));
+    player.SetX(event.GetX() - (player.GetWidth() / 2));
+    player.SetY(event.GetY() - (player.GetHeight() / 2));
   }
 }
 

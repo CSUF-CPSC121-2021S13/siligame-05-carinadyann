@@ -20,7 +20,7 @@ class Game : public graphics::AnimationEventListener,
     }
   int GetScore() const;
 
-  bool HasLost();
+  bool HasLost() const;
 
   Player& GetPlayer();
 
@@ -66,7 +66,8 @@ class Game : public graphics::AnimationEventListener,
   std::vector<std::unique_ptr<OpponentProjectile>> o_projectiles;
   std::vector<std::unique_ptr<Opponent>> opponents;
   graphics::Image game_screen;
-  Player* player;
+  Player player;
+  bool has_lost = false;
 };
 
 #endif
