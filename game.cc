@@ -54,8 +54,8 @@ void Game::CreatePlayerProjectiles() {
 }
 
 void Game::Init() {
-  player.SetX(player.GetX());
-  player.SetY(player.GetY());
+  player.SetX(player.GetX() + 1);
+  player.SetY(player.GetY() + 1);
   // CreateOpponents();
   // CreateOpponentProjectiles();
   // CreatePlayerProjectiles();
