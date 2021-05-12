@@ -1,21 +1,24 @@
 #include "game.h"
-#include "opponent.h"
 #include <iostream>
+#include <memory>
 #include <string>
 #include <vector>
-#include <memory>
 #include "cpputils/graphics/image.h"
+#include "opponent.h"
 #include "player.h"
 
 int Game::GetScore() const { return score; }
 
 bool Game::HasLost() const { return has_lost; }
 
-Player& Game::GetPlayer() { return player; }
+Player &Game::GetPlayer() { return player; }
 
-std::vector<std::unique_ptr<Opponent>> &Game::GetOpponents() { return opponents; }
+std::vector<std::unique_ptr<Opponent>> &Game::GetOpponents() {
+  return opponents;
+}
 
-std::vector<std::unique_ptr<OpponentProjectile>> &Game::GetOpponentProjectiles() {
+std::vector<std::unique_ptr<OpponentProjectile>>
+    &Game::GetOpponentProjectiles() {
   return o_projectiles;
 }
 
@@ -34,7 +37,8 @@ void Game::CreateOpponents() {
 }
 
 void Game::CreateOpponentProjectiles() {
-  std::unique_ptr<OpponentProjectile> o_projectile = std::make_unique<OpponentProjectile>();
+  std::unique_ptr<OpponentProjectile> o_projectile =
+      std::make_unique<OpponentProjectile>();
   // OpponentProjectile* o_projectile;
   int x = rand() % (game_screen.GetWidth() - o_projectile->GetWidth());
   int y = rand() % (game_screen.GetHeight() - o_projectile->GetHeight());
@@ -44,7 +48,8 @@ void Game::CreateOpponentProjectiles() {
 }
 
 void Game::CreatePlayerProjectiles() {
-  std::unique_ptr<PlayerProjectile> p_projectile = std::make_unique<PlayerProjectile>();
+  std::unique_ptr<PlayerProjectile> p_projectile =
+      std::make_unique<PlayerProjectile>();
   // PlayerProjectile* p_projectile;
   int x = rand() % (game_screen.GetWidth() - p_projectile->GetWidth());
   int y = rand() % (game_screen.GetHeight() - p_projectile->GetHeight());
@@ -70,7 +75,8 @@ void Game::UpdateScreen() {
       opponents[i]->Draw(game_screen);
       std::string s_score = std::to_string(score);
       scoreboard = "Score: " + s_score;
-      game_screen.DrawText(400, 300, scoreboard, 20, graphics::Color(255, 0, 0));
+      game_screen.DrawText(400, 300, scoreboard, 20,
+                           graphics::Color(255, 0, 0));
     }
   }
 
@@ -79,7 +85,8 @@ void Game::UpdateScreen() {
       o_projectiles[j]->Draw(game_screen);
       std::string s_score = std::to_string(score);
       scoreboard = "Score: " + s_score;
-      game_screen.DrawText(400, 300, scoreboard, 20, graphics::Color(255, 0, 0));
+      game_screen.DrawText(400, 300, scoreboard, 20,
+                           graphics::Color(255, 0, 0));
     }
   }
 
@@ -88,7 +95,8 @@ void Game::UpdateScreen() {
       p_projectiles[k]->Draw(game_screen);
       std::string s_score = std::to_string(score);
       scoreboard = "Score: " + s_score;
-      game_screen.DrawText(400, 300, scoreboard, 20, graphics::Color(255, 0, 0));
+      game_screen.DrawText(400, 300, scoreboard, 20,
+                           graphics::Color(255, 0, 0));
     }
   }
 
@@ -135,7 +143,7 @@ void Game::FilterIntersections() {
       if (p_projectiles[i]->IntersectsWith(opponents[j].get())) {
         p_projectiles[i]->SetIsActive(false);
         opponents[j]->SetIsActive(false);
-        if(player.GetIsActive()) {
+        if (player.GetIsActive()) {
           score++;
         }
       }
@@ -157,7 +165,9 @@ void Game::FilterIntersections() {
 // listener) {}
 
 void Game::OnAnimationStep() {
-  game_screen.DrawRectangle(0, 0, game_screen.GetWidth(), game_screen.GetHeight(), graphics::Color(255, 255, 255));
+  game_screen.DrawRectangle(0, 0, game_screen.GetWidth(),
+                            game_screen.GetHeight(),
+                            graphics::Color(255, 255, 255));
   MoveGameElements();
   LaunchProjectiles();
   FilterIntersections();
@@ -171,8 +181,10 @@ void Game::OnMouseEvent(const graphics::MouseEvent &event) {
       event.GetY() <= game_screen.GetHeight() && event.GetY() >= 0) {
     player.SetX(event.GetX() - (player.GetWidth() / 2));
     player.SetY(event.GetY() - (player.GetHeight() / 2));
-    if (event.GetMouseAction() == graphics::MouseAction::kPressed || event.GetMouseAction() == graphics::MouseAction::kDragged) {
-      std::unique_ptr<PlayerProjectile> play_pro = std::make_unique<PlayerProjectile>();
+    if (event.GetMouseAction() == graphics::MouseAction::kPressed ||
+        event.GetMouseAction() == graphics::MouseAction::kDragged) {
+      std::unique_ptr<PlayerProjectile> play_pro =
+          std::make_unique<PlayerProjectile>();
       p_projectiles.push_back(std::move(play_pro));
     }
   }
@@ -182,7 +194,8 @@ void Game::Start() { game_screen.ShowUntilClosed(); }
 
 void Game::LaunchProjectiles() {
   for (int i = 0; i < opponents.size(); i++) {
-    std::unique_ptr<OpponentProjectile> result = opponents[i]->LaunchProjectile();
+    std::unique_ptr<OpponentProjectile> result =
+        opponents[i]->LaunchProjectile();
     if (result != nullptr) {
       o_projectiles.push_back(std::move(result));
     }

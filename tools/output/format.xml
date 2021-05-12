@@ -1,0 +1,47 @@
+<?xml version='1.0'?>
+<replacements xml:space='preserve' incomplete_format='false'>
+<replacement offset='0' length='160'>#include "cpputils/graphics/image.h"&#10;#include "game.h"&#10;#include "game_element.h"&#10;#include "opponent.h"&#10;#include "player.h"&#10;#include &lt;iostream>&#10;#include &lt;string></replacement>
+</replacements>
+<?xml version='1.0'?>
+<replacements xml:space='preserve' incomplete_format='false'>
+<replacement offset='0' length='112'>#include "player.h"&#10;#include "cpputils/graphics/image.h"&#10;#include &lt;iostream>&#10;#include &lt;string>&#10;#include &lt;vector></replacement>
+</replacements>
+<?xml version='1.0'?>
+<replacements xml:space='preserve' incomplete_format='false'>
+<replacement offset='0' length='114'>#include "opponent.h"&#10;#include "cpputils/graphics/image.h"&#10;#include &lt;iostream>&#10;#include &lt;string>&#10;#include &lt;vector></replacement>
+</replacements>
+<?xml version='1.0'?>
+<replacements xml:space='preserve' incomplete_format='false'>
+<replacement offset='0' length='136'>#include "game_element.h"&#10;#include "cpputils/graphics/image.h"&#10;#include "game.h"&#10;#include &lt;iostream>&#10;#include &lt;string>&#10;#include &lt;vector></replacement>
+</replacements>
+<?xml version='1.0'?>
+<replacements xml:space='preserve' incomplete_format='false'>
+<replacement offset='0' length='170'>#include "game.h"&#10;#include "cpputils/graphics/image.h"&#10;#include "opponent.h"&#10;#include "player.h"&#10;#include &lt;iostream>&#10;#include &lt;memory>&#10;#include &lt;string>&#10;#include &lt;vector></replacement>
+<replacement offset='447' length='5'> </replacement>
+<replacement offset='453' length='0'>&#10;</replacement>
+</replacements>
+<?xml version='1.0'?>
+<replacements xml:space='preserve' incomplete_format='false'>
+<replacement offset='34' length='122'>#include "cpputils/graphics/image.h"&#10;#include "game_element.h"&#10;#include "opponent.h"&#10;#include &lt;iostream>&#10;#include &lt;string></replacement>
+<replacement offset='193' length='2'>&#10;</replacement>
+<replacement offset='440' length='2'>&#10;</replacement>
+</replacements>
+<?xml version='1.0'?>
+<replacements xml:space='preserve' incomplete_format='false'>
+<replacement offset='0' length='118'>#include "cpputils/graphics/image.h"&#10;#include "game_element.h"&#10;#include &lt;iostream>&#10;#include &lt;string>&#10;#include &lt;vector></replacement>
+<replacement offset='205' length='2'>&#10;</replacement>
+<replacement offset='479' length='2'>&#10;</replacement>
+<replacement offset='739' length='3'>&#10;&#10;</replacement>
+</replacements>
+<?xml version='1.0'?>
+<replacements xml:space='preserve' incomplete_format='false'>
+<replacement offset='0' length='74'>#include "cpputils/graphics/image.h"&#10;#include &lt;iostream>&#10;#include &lt;string></replacement>
+<replacement offset='141' length='2'>&#10;</replacement>
+<replacement offset='749' length='3'>&#10;&#10;</replacement>
+</replacements>
+<?xml version='1.0'?>
+<replacements xml:space='preserve' incomplete_format='false'>
+<replacement offset='0' length='195'>#include "cpputils/graphics/image.h"&#10;#include "cpputils/graphics/image_event.h"&#10;#include "opponent.h"&#10;#include "player.h"&#10;#include &lt;iostream>&#10;#include &lt;memory>&#10;#include &lt;string>&#10;#include &lt;vector></replacement>
+<replacement offset='324' length='2'>&#10;</replacement>
+<replacement offset='1375' length='3'>&#10;&#10;</replacement>
+</replacements>

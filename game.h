@@ -1,7 +1,7 @@
 #include <iostream>
+#include <memory>
 #include <string>
 #include <vector>
-#include <memory>
 #include "cpputils/graphics/image.h"
 #include "cpputils/graphics/image_event.h"
 #include "opponent.h"
@@ -17,12 +17,12 @@ class Game : public graphics::AnimationEventListener,
     // game_screen.Initialize(width, height);
     // player->SetX(10);
     // player->SetY(10);
-    }
+  }
   int GetScore() const;
 
   bool HasLost() const;
 
-  Player& GetPlayer();
+  Player &GetPlayer();
 
   std::vector<std::unique_ptr<Opponent>> &GetOpponents();
 
@@ -59,6 +59,7 @@ class Game : public graphics::AnimationEventListener,
   void LaunchProjectiles();
 
   void RemoveInactive();
+
  private:
   std::string scoreboard = "";
   int score = 0;
