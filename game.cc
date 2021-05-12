@@ -187,21 +187,21 @@ void Game::LaunchProjectiles() {
 }
 
 void Game::RemoveInactive() {
-  for (int i = 0; i < opponents.size(); i++) {
+  for (int i = opponents.size() - 1; i >= 0; i--) {
     if (!opponents[i]->GetIsActive()) {
       opponents.erase(opponents.begin() + i);
     }
   }
 
-  for (int i = 0; i < o_projectiles.size(); i++) {
+  for (int i = o_projectiles.size() - 1; i >= 0; i--) {
     if (!o_projectiles[i]->GetIsActive()) {
       o_projectiles.erase(o_projectiles.begin() + i);
     }
   }
 
-  for (int i = 0; i < p_projectiles.size(); i++) {
-    if (!p_projectiles[i]->GetIsActive()) {
-      p_projectiles.erase(p_projectiles.begin() + i);
+  for (int i = p_projectiles.size() - 1; i >= 0; i--) {
+    if (!p_projectiles[i]->GetIsActive() + i) {
+      p_projectiles.erase(p_projectiles.begin());
     }
   }
 }
