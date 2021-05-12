@@ -57,7 +57,7 @@ void PlayerProjectile::Move(const graphics::Image &foreground) {
     SetIsActive(false);
   } else {
     // if it's not out of bounds, increment the y (the enemy keeps moving up)
-    x_ += 1;
-    y_ += 1;
+    x_ -= 1;
+    y_ -= 1;
   }
 }
