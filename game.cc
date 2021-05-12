@@ -54,7 +54,8 @@ void Game::CreatePlayerProjectiles() {
 }
 
 void Game::Init() {
-  Player(10, 10);
+  player.SetX(player.GetX());
+  player.SetY(player.GetY());
   // CreateOpponents();
   // CreateOpponentProjectiles();
   // CreatePlayerProjectiles();
@@ -134,7 +135,9 @@ void Game::FilterIntersections() {
       if (p_projectiles[i]->IntersectsWith(opponents[j].get())) {
         p_projectiles[i]->SetIsActive(false);
         opponents[j]->SetIsActive(false);
-        score++;
+        if(player.GetIsActive()) {
+          score++;
+        }
       }
     }
   }
