@@ -32,10 +32,6 @@ class Game : public graphics::AnimationEventListener,
 
   void CreateOpponents();
 
-  void CreateOpponentProjectiles();
-
-  void CreatePlayerProjectiles();
-
   void Init();
 
   void UpdateScreen();

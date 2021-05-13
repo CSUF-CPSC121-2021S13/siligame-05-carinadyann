@@ -27,35 +27,9 @@ std::vector<std::unique_ptr<PlayerProjectile>> &Game::GetPlayerProjectiles() {
 }
 
 void Game::CreateOpponents() {
-  std::unique_ptr<Opponent> opponent = std::make_unique<Opponent>();
+  std::unique_ptr<Opponent> opponent = std::make_unique<Opponent>(10, 10);
   // Opponent* opponent;
-  int x = rand() % (game_screen.GetWidth() - opponent->GetWidth());
-  int y = rand() % (game_screen.GetHeight() - opponent->GetHeight());
-  opponent->SetX(x);
-  opponent->SetY(y);
   opponents.push_back(std::move(opponent));
-}
-
-void Game::CreateOpponentProjectiles() {
-  std::unique_ptr<OpponentProjectile> o_projectile =
-      std::make_unique<OpponentProjectile>();
-  // OpponentProjectile* o_projectile;
-  int x = rand() % (game_screen.GetWidth() - o_projectile->GetWidth());
-  int y = rand() % (game_screen.GetHeight() - o_projectile->GetHeight());
-  o_projectile->SetX(x);
-  o_projectile->SetY(y);
-  o_projectiles.push_back(std::move(o_projectile));
-}
-
-void Game::CreatePlayerProjectiles() {
-  std::unique_ptr<PlayerProjectile> p_projectile =
-      std::make_unique<PlayerProjectile>();
-  // PlayerProjectile* p_projectile;
-  int x = rand() % (game_screen.GetWidth() - p_projectile->GetWidth());
-  int y = rand() % (game_screen.GetHeight() - p_projectile->GetHeight());
-  p_projectile->SetX(x);
-  p_projectile->SetY(y);
-  p_projectiles.push_back(std::move(p_projectile));
 }
 
 void Game::Init() {
@@ -69,34 +43,26 @@ void Game::Init() {
 }
 
 void Game::UpdateScreen() {
+  std::string s_score = std::to_string(score);
+  scoreboard = "Score: " + s_score;
+  game_screen.DrawText(400, 300, scoreboard, 20, graphics::Color(255, 0, 0));
+
   game_screen.DrawRectangle(0, 0, 800, 600, graphics::Color(255, 255, 255));
   for (int i = 0; i < opponents.size(); i++) {
     if (opponents[i]->GetIsActive() == true) {
       opponents[i]->Draw(game_screen);
-      std::string s_score = std::to_string(score);
-      scoreboard = "Score: " + s_score;
-      game_screen.DrawText(400, 300, scoreboard, 20,
-                           graphics::Color(255, 0, 0));
     }
   }
 
   for (int j = 0; j < o_projectiles.size(); j++) {
     if (o_projectiles[j]->GetIsActive() == true) {
       o_projectiles[j]->Draw(game_screen);
-      std::string s_score = std::to_string(score);
-      scoreboard = "Score: " + s_score;
-      game_screen.DrawText(400, 300, scoreboard, 20,
-                           graphics::Color(255, 0, 0));
     }
   }
 
   for (int k = 0; k < p_projectiles.size(); k++) {
     if (p_projectiles[k]->GetIsActive() == true) {
       p_projectiles[k]->Draw(game_screen);
-      std::string s_score = std::to_string(score);
-      scoreboard = "Score: " + s_score;
-      game_screen.DrawText(400, 300, scoreboard, 20,
-                           graphics::Color(255, 0, 0));
     }
   }
 
@@ -165,9 +131,9 @@ void Game::FilterIntersections() {
 // listener) {}
 
 void Game::OnAnimationStep() {
-  game_screen.DrawRectangle(0, 0, game_screen.GetWidth(),
-                            game_screen.GetHeight(),
-                            graphics::Color(255, 255, 255));
+  if(opponents.size() == 0) {
+    CreateOpponents();
+  }
   MoveGameElements();
   LaunchProjectiles();
   FilterIntersections();
@@ -216,8 +182,8 @@ void Game::RemoveInactive() {
   }
 
   for (int i = p_projectiles.size() - 1; i >= 0; i--) {
-    if (!p_projectiles[i]->GetIsActive() + i) {
-      p_projectiles.erase(p_projectiles.begin());
+    if (!p_projectiles[i]->GetIsActive()) {
+      p_projectiles.erase(p_projectiles.begin() + i);
     }
   }
 }
