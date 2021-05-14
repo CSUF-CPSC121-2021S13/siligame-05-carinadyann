@@ -1,0 +1,29 @@
+---
+MainSourceFile:  /root/sandbox/siligame-05-carinadyann/player.cc
+Diagnostics:     
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         '''stddef.h'' file not found'
+    FileOffset:      1165
+    FilePath:        /usr/include/wchar.h
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         '''stddef.h'' file not found'
+    FileOffset:      1165
+    FilePath:        /usr/include/wchar.h
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         '''stddef.h'' file not found'
+    FileOffset:      1165
+    FilePath:        /usr/include/wchar.h
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         '''stddef.h'' file not found'
+    FileOffset:      1165
+    FilePath:        /usr/include/wchar.h
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         '''stddef.h'' file not found'
+    FileOffset:      1165
+    FilePath:        /usr/include/wchar.h
+    Replacements:    
+...

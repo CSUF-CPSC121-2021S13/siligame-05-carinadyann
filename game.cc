@@ -131,7 +131,7 @@ void Game::FilterIntersections() {
 // listener) {}
 
 void Game::OnAnimationStep() {
-  if(opponents.size() == 0) {
+  if (opponents.size() == 0) {
     CreateOpponents();
   }
   MoveGameElements();

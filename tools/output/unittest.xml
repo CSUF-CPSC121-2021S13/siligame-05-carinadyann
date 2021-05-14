@@ -1,64 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="49" failures="0" disabled="0" errors="0" time="2.817" timestamp="2021-05-12T22:08:55.092" name="AllTests">
-  <testsuite name="GameElement" tests="4" failures="0" disabled="0" skipped="0" errors="0" time="0.002" timestamp="2021-05-12T22:08:55.092">
-    <testcase name="DefaultConstructor" status="run" result="completed" time="0" timestamp="2021-05-12T22:08:55.092" classname="GameElement" />
-    <testcase name="ParametrizedConstructor" status="run" result="completed" time="0" timestamp="2021-05-12T22:08:55.092" classname="GameElement" />
-    <testcase name="IntersectsWithGameElement" status="run" result="completed" time="0" timestamp="2021-05-12T22:08:55.093" classname="GameElement" />
-    <testcase name="IsOutOfBounds" status="run" result="completed" time="0.001" timestamp="2021-05-12T22:08:55.093" classname="GameElement" />
+<testsuites tests="49" failures="0" disabled="0" errors="0" time="2.616" timestamp="2021-05-14T03:29:11.634" name="AllTests">
+  <testsuite name="GameElement" tests="4" failures="0" disabled="0" skipped="0" errors="0" time="0.002" timestamp="2021-05-14T03:29:11.635">
+    <testcase name="DefaultConstructor" status="run" result="completed" time="0" timestamp="2021-05-14T03:29:11.635" classname="GameElement" />
+    <testcase name="ParametrizedConstructor" status="run" result="completed" time="0" timestamp="2021-05-14T03:29:11.635" classname="GameElement" />
+    <testcase name="IntersectsWithGameElement" status="run" result="completed" time="0" timestamp="2021-05-14T03:29:11.635" classname="GameElement" />
+    <testcase name="IsOutOfBounds" status="run" result="completed" time="0.001" timestamp="2021-05-14T03:29:11.635" classname="GameElement" />
   </testsuite>
-  <testsuite name="Opponent" tests="6" failures="0" disabled="0" skipped="0" errors="0" time="0.305" timestamp="2021-05-12T22:08:55.094">
-    <testcase name="InheritsFromGameElement" status="run" result="completed" time="0" timestamp="2021-05-12T22:08:55.094" classname="Opponent" />
-    <testcase name="DefaultConstructor" status="run" result="completed" time="0" timestamp="2021-05-12T22:08:55.095" classname="Opponent" />
-    <testcase name="ParemterizedConstructor" status="run" result="completed" time="0" timestamp="2021-05-12T22:08:55.095" classname="Opponent" />
-    <testcase name="Draw" status="run" result="completed" time="0.301" timestamp="2021-05-12T22:08:55.095" classname="Opponent" />
-    <testcase name="Move" status="run" result="completed" time="0.001" timestamp="2021-05-12T22:08:55.397" classname="Opponent" />
-    <testcase name="LaunchProjectile" status="run" result="completed" time="0" timestamp="2021-05-12T22:08:55.399" classname="Opponent" />
+  <testsuite name="Opponent" tests="6" failures="0" disabled="0" skipped="0" errors="0" time="0.276" timestamp="2021-05-14T03:29:11.638">
+    <testcase name="InheritsFromGameElement" status="run" result="completed" time="0" timestamp="2021-05-14T03:29:11.638" classname="Opponent" />
+    <testcase name="DefaultConstructor" status="run" result="completed" time="0" timestamp="2021-05-14T03:29:11.638" classname="Opponent" />
+    <testcase name="ParemterizedConstructor" status="run" result="completed" time="0" timestamp="2021-05-14T03:29:11.638" classname="Opponent" />
+    <testcase name="Draw" status="run" result="completed" time="0.274" timestamp="2021-05-14T03:29:11.638" classname="Opponent" />
+    <testcase name="Move" status="run" result="completed" time="0.001" timestamp="2021-05-14T03:29:11.912" classname="Opponent" />
+    <testcase name="LaunchProjectile" status="run" result="completed" time="0" timestamp="2021-05-14T03:29:11.914" classname="Opponent" />
   </testsuite>
-  <testsuite name="OpponentProjectile" tests="5" failures="0" disabled="0" skipped="0" errors="0" time="0.263" timestamp="2021-05-12T22:08:55.400">
-    <testcase name="InheritsFromGameElement" status="run" result="completed" time="0" timestamp="2021-05-12T22:08:55.400" classname="OpponentProjectile" />
-    <testcase name="DefaultConstructor" status="run" result="completed" time="0" timestamp="2021-05-12T22:08:55.401" classname="OpponentProjectile" />
-    <testcase name="ParemterizedConstructor" status="run" result="completed" time="0" timestamp="2021-05-12T22:08:55.401" classname="OpponentProjectile" />
-    <testcase name="Draw" status="run" result="completed" time="0.26" timestamp="2021-05-12T22:08:55.401" classname="OpponentProjectile" />
-    <testcase name="Move" status="run" result="completed" time="0.001" timestamp="2021-05-12T22:08:55.662" classname="OpponentProjectile" />
+  <testsuite name="OpponentProjectile" tests="5" failures="0" disabled="0" skipped="0" errors="0" time="0.274" timestamp="2021-05-14T03:29:11.916">
+    <testcase name="InheritsFromGameElement" status="run" result="completed" time="0" timestamp="2021-05-14T03:29:11.916" classname="OpponentProjectile" />
+    <testcase name="DefaultConstructor" status="run" result="completed" time="0" timestamp="2021-05-14T03:29:11.917" classname="OpponentProjectile" />
+    <testcase name="ParemterizedConstructor" status="run" result="completed" time="0" timestamp="2021-05-14T03:29:11.918" classname="OpponentProjectile" />
+    <testcase name="Draw" status="run" result="completed" time="0.27" timestamp="2021-05-14T03:29:11.918" classname="OpponentProjectile" />
+    <testcase name="Move" status="run" result="completed" time="0.001" timestamp="2021-05-14T03:29:12.189" classname="OpponentProjectile" />
   </testsuite>
-  <testsuite name="Player" tests="6" failures="0" disabled="0" skipped="0" errors="0" time="0.27" timestamp="2021-05-12T22:08:55.664">
-    <testcase name="InheritsFromGameElement" status="run" result="completed" time="0" timestamp="2021-05-12T22:08:55.665" classname="Player" />
-    <testcase name="DefaultConstructor" status="run" result="completed" time="0" timestamp="2021-05-12T22:08:55.666" classname="Player" />
-    <testcase name="ParemterizedConstructor" status="run" result="completed" time="0" timestamp="2021-05-12T22:08:55.666" classname="Player" />
-    <testcase name="Draw" status="run" result="completed" time="0.264" timestamp="2021-05-12T22:08:55.667" classname="Player" />
-    <testcase name="IntersectsWithOpponentsAndProjectiles" status="run" result="completed" time="0" timestamp="2021-05-12T22:08:55.932" classname="Player" />
-    <testcase name="Move" status="run" result="completed" time="0.001" timestamp="2021-05-12T22:08:55.933" classname="Player" />
+  <testsuite name="Player" tests="6" failures="0" disabled="0" skipped="0" errors="0" time="0.272" timestamp="2021-05-14T03:29:12.191">
+    <testcase name="InheritsFromGameElement" status="run" result="completed" time="0" timestamp="2021-05-14T03:29:12.191" classname="Player" />
+    <testcase name="DefaultConstructor" status="run" result="completed" time="0" timestamp="2021-05-14T03:29:12.191" classname="Player" />
+    <testcase name="ParemterizedConstructor" status="run" result="completed" time="0" timestamp="2021-05-14T03:29:12.191" classname="Player" />
+    <testcase name="Draw" status="run" result="completed" time="0.27" timestamp="2021-05-14T03:29:12.191" classname="Player" />
+    <testcase name="IntersectsWithOpponentsAndProjectiles" status="run" result="completed" time="0" timestamp="2021-05-14T03:29:12.462" classname="Player" />
+    <testcase name="Move" status="run" result="completed" time="0.001" timestamp="2021-05-14T03:29:12.462" classname="Player" />
   </testsuite>
-  <testsuite name="PlayerProjectile" tests="6" failures="0" disabled="0" skipped="0" errors="0" time="0.302" timestamp="2021-05-12T22:08:55.936">
-    <testcase name="InheritsFromGameElement" status="run" result="completed" time="0" timestamp="2021-05-12T22:08:55.936" classname="PlayerProjectile" />
-    <testcase name="DefaultConstructor" status="run" result="completed" time="0" timestamp="2021-05-12T22:08:55.937" classname="PlayerProjectile" />
-    <testcase name="ParemterizedConstructor" status="run" result="completed" time="0" timestamp="2021-05-12T22:08:55.937" classname="PlayerProjectile" />
-    <testcase name="Draw" status="run" result="completed" time="0.298" timestamp="2021-05-12T22:08:55.937" classname="PlayerProjectile" />
-    <testcase name="IntersectsWithOpponent" status="run" result="completed" time="0" timestamp="2021-05-12T22:08:56.236" classname="PlayerProjectile" />
-    <testcase name="Move" status="run" result="completed" time="0.001" timestamp="2021-05-12T22:08:56.237" classname="PlayerProjectile" />
+  <testsuite name="PlayerProjectile" tests="6" failures="0" disabled="0" skipped="0" errors="0" time="0.253" timestamp="2021-05-14T03:29:12.464">
+    <testcase name="InheritsFromGameElement" status="run" result="completed" time="0" timestamp="2021-05-14T03:29:12.464" classname="PlayerProjectile" />
+    <testcase name="DefaultConstructor" status="run" result="completed" time="0" timestamp="2021-05-14T03:29:12.464" classname="PlayerProjectile" />
+    <testcase name="ParemterizedConstructor" status="run" result="completed" time="0" timestamp="2021-05-14T03:29:12.464" classname="PlayerProjectile" />
+    <testcase name="Draw" status="run" result="completed" time="0.249" timestamp="2021-05-14T03:29:12.464" classname="PlayerProjectile" />
+    <testcase name="IntersectsWithOpponent" status="run" result="completed" time="0" timestamp="2021-05-14T03:29:12.714" classname="PlayerProjectile" />
+    <testcase name="Move" status="run" result="completed" time="0.001" timestamp="2021-05-14T03:29:12.715" classname="PlayerProjectile" />
   </testsuite>
-  <testsuite name="Game" tests="22" failures="0" disabled="0" skipped="0" errors="0" time="1.67" timestamp="2021-05-12T22:08:56.238">
-    <testcase name="DefaultConstructor" status="run" result="completed" time="0.001" timestamp="2021-05-12T22:08:56.238" classname="Game" />
-    <testcase name="ParametrizedConstructor" status="run" result="completed" time="0" timestamp="2021-05-12T22:08:56.240" classname="Game" />
-    <testcase name="CreateOpponents" status="run" result="completed" time="0.017" timestamp="2021-05-12T22:08:56.241" classname="Game" />
-    <testcase name="MoveActiveGameElements" status="run" result="completed" time="0.025" timestamp="2021-05-12T22:08:56.258" classname="Game" />
-    <testcase name="MoveInActiveGameElements" status="run" result="completed" time="0.019" timestamp="2021-05-12T22:08:56.284" classname="Game" />
-    <testcase name="LaunchProjectiles" status="run" result="completed" time="0.033" timestamp="2021-05-12T22:08:56.304" classname="Game" />
-    <testcase name="FilterIntersectionsWithOpponentProjectile" status="run" result="completed" time="0.024" timestamp="2021-05-12T22:08:56.337" classname="Game" />
-    <testcase name="FilterIntersectionsWithOpponentProjectileNoIntersect" status="run" result="completed" time="0.033" timestamp="2021-05-12T22:08:56.362" classname="Game" />
-    <testcase name="FilterIntersectionsWithOpponent" status="run" result="completed" time="0.028" timestamp="2021-05-12T22:08:56.395" classname="Game" />
-    <testcase name="FilterIntersectionsWithOpponentNoIntersect" status="run" result="completed" time="0.028" timestamp="2021-05-12T22:08:56.424" classname="Game" />
-    <testcase name="Score" status="run" result="completed" time="0.029" timestamp="2021-05-12T22:08:56.453" classname="Game" />
-    <testcase name="ScoreInactivePlayer" status="run" result="completed" time="0.021" timestamp="2021-05-12T22:08:56.483" classname="Game" />
-    <testcase name="RemoveInactive" status="run" result="completed" time="0.02" timestamp="2021-05-12T22:08:56.505" classname="Game" />
-    <testcase name="Init" status="run" result="completed" time="0.018" timestamp="2021-05-12T22:08:56.525" classname="Game" />
-    <testcase name="UpdateScreen" status="run" result="completed" time="0.792" timestamp="2021-05-12T22:08:56.544" classname="Game" />
-    <testcase name="UpdateScreenNoElements" status="run" result="completed" time="0.292" timestamp="2021-05-12T22:08:57.336" classname="Game" />
-    <testcase name="OnAnimationStep" status="run" result="completed" time="0.113" timestamp="2021-05-12T22:08:57.629" classname="Game" />
-    <testcase name="OnAnimationStepProjectiles" status="run" result="completed" time="0.055" timestamp="2021-05-12T22:08:57.742" classname="Game" />
-    <testcase name="OnMouseEvent" status="run" result="completed" time="0.028" timestamp="2021-05-12T22:08:57.797" classname="Game" />
-    <testcase name="OnMouseEventDragged" status="run" result="completed" time="0.032" timestamp="2021-05-12T22:08:57.825" classname="Game" />
-    <testcase name="OnMouseEventPressed" status="run" result="completed" time="0.03" timestamp="2021-05-12T22:08:57.858" classname="Game" />
-    <testcase name="OnMouseEventOutOfBounds" status="run" result="completed" time="0.02" timestamp="2021-05-12T22:08:57.888" classname="Game" />
+  <testsuite name="Game" tests="22" failures="0" disabled="0" skipped="0" errors="0" time="1.532" timestamp="2021-05-14T03:29:12.717">
+    <testcase name="DefaultConstructor" status="run" result="completed" time="0.001" timestamp="2021-05-14T03:29:12.718" classname="Game" />
+    <testcase name="ParametrizedConstructor" status="run" result="completed" time="0" timestamp="2021-05-14T03:29:12.720" classname="Game" />
+    <testcase name="CreateOpponents" status="run" result="completed" time="0.016" timestamp="2021-05-14T03:29:12.720" classname="Game" />
+    <testcase name="MoveActiveGameElements" status="run" result="completed" time="0.029" timestamp="2021-05-14T03:29:12.738" classname="Game" />
+    <testcase name="MoveInActiveGameElements" status="run" result="completed" time="0.019" timestamp="2021-05-14T03:29:12.767" classname="Game" />
+    <testcase name="LaunchProjectiles" status="run" result="completed" time="0.017" timestamp="2021-05-14T03:29:12.786" classname="Game" />
+    <testcase name="FilterIntersectionsWithOpponentProjectile" status="run" result="completed" time="0.018" timestamp="2021-05-14T03:29:12.804" classname="Game" />
+    <testcase name="FilterIntersectionsWithOpponentProjectileNoIntersect" status="run" result="completed" time="0.017" timestamp="2021-05-14T03:29:12.822" classname="Game" />
+    <testcase name="FilterIntersectionsWithOpponent" status="run" result="completed" time="0.031" timestamp="2021-05-14T03:29:12.840" classname="Game" />
+    <testcase name="FilterIntersectionsWithOpponentNoIntersect" status="run" result="completed" time="0.017" timestamp="2021-05-14T03:29:12.872" classname="Game" />
+    <testcase name="Score" status="run" result="completed" time="0.018" timestamp="2021-05-14T03:29:12.889" classname="Game" />
+    <testcase name="ScoreInactivePlayer" status="run" result="completed" time="0.016" timestamp="2021-05-14T03:29:12.907" classname="Game" />
+    <testcase name="RemoveInactive" status="run" result="completed" time="0.016" timestamp="2021-05-14T03:29:12.923" classname="Game" />
+    <testcase name="Init" status="run" result="completed" time="0.018" timestamp="2021-05-14T03:29:12.940" classname="Game" />
+    <testcase name="UpdateScreen" status="run" result="completed" time="0.742" timestamp="2021-05-14T03:29:12.959" classname="Game" />
+    <testcase name="UpdateScreenNoElements" status="run" result="completed" time="0.277" timestamp="2021-05-14T03:29:13.702" classname="Game" />
+    <testcase name="OnAnimationStep" status="run" result="completed" time="0.109" timestamp="2021-05-14T03:29:13.980" classname="Game" />
+    <testcase name="OnAnimationStepProjectiles" status="run" result="completed" time="0.041" timestamp="2021-05-14T03:29:14.090" classname="Game" />
+    <testcase name="OnMouseEvent" status="run" result="completed" time="0.032" timestamp="2021-05-14T03:29:14.132" classname="Game" />
+    <testcase name="OnMouseEventDragged" status="run" result="completed" time="0.024" timestamp="2021-05-14T03:29:14.164" classname="Game" />
+    <testcase name="OnMouseEventPressed" status="run" result="completed" time="0.034" timestamp="2021-05-14T03:29:14.189" classname="Game" />
+    <testcase name="OnMouseEventOutOfBounds" status="run" result="completed" time="0.025" timestamp="2021-05-14T03:29:14.224" classname="Game" />
   </testsuite>
 </testsuites>

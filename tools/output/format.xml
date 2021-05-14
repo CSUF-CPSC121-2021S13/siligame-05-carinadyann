@@ -43,5 +43,5 @@
 <replacements xml:space='preserve' incomplete_format='false'>
 <replacement offset='0' length='195'>#include "cpputils/graphics/image.h"&#10;#include "cpputils/graphics/image_event.h"&#10;#include "opponent.h"&#10;#include "player.h"&#10;#include &lt;iostream>&#10;#include &lt;memory>&#10;#include &lt;string>&#10;#include &lt;vector></replacement>
 <replacement offset='324' length='2'>&#10;</replacement>
-<replacement offset='1375' length='3'>&#10;&#10;</replacement>
+<replacement offset='1303' length='3'>&#10;&#10;</replacement>
 </replacements>
